@@ -1,0 +1,21 @@
+{
+  "name": "IRON GEORGE – Trénink",
+  "short_name": "IRON GEORGE",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1018",
+  "theme_color": "#10151f",
+  "description": "Osobní trénink kliků, břicha a švihadla.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
