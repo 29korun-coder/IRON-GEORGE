@@ -1,197 +1,250 @@
 <!doctype html>
 <html lang="cs">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#10151f">
-<meta name="description" content="IRON GEORGE – osobní trénink kliků, břicha a švihadla.">
-<link rel="manifest" href="manifest.webmanifest">
-<title>IRON GEORGE</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10151f"><meta name="description" content="IRON GEORGE – dlouhodobý tréninkový systém">
+<link rel="manifest" href="manifest.webmanifest"><title>IRON GEORGE 3.0</title>
 <style>
-:root{--bg:#0b1018;--panel:#141d29;--panel2:#1b2735;--line:#29384a;--txt:#f3f6fa;--muted:#9baabd;--lime:#c7f36b;--cyan:#63d8df;--orange:#ffad66;--red:#ff707b;--radius:19px}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#24364a 0,transparent 42%),var(--bg);color:var(--txt);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:92px}
-header{padding:22px 18px 12px;display:flex;justify-content:space-between;align-items:center;max-width:850px;margin:auto}
-.brand{font-weight:950;letter-spacing:2px;font-size:21px}.brand span{color:var(--lime)}.sub{color:var(--muted);font-size:11px;letter-spacing:2px}
-main{max-width:850px;margin:auto;padding:0 14px}.view{display:none}.view.active{display:block}
-h1{font-size:27px;line-height:1.1;margin:8px 0 5px}h2{font-size:18px;margin:0 0 12px}h3{font-size:15px;margin:0 0 6px}
-p{margin:6px 0;color:var(--muted)}.muted{color:var(--muted)}.tiny{font-size:12px;color:var(--muted)}
-.card{background:linear-gradient(145deg,var(--panel),#111a25);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin:12px 0;box-shadow:0 10px 28px #0002}
-.hero{background:linear-gradient(120deg,#263b32,#172733 65%,#17202c);border-color:#526b4d}
-.flex{display:flex;align-items:center;justify-content:space-between;gap:12px}.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
-.xp{font-size:38px;font-weight:900;letter-spacing:-1px;color:var(--lime)}.pill{background:#273646;border:1px solid #3a4c60;border-radius:99px;padding:5px 10px;font-size:12px;color:#dce8f2}
-.progress{height:9px;background:#273444;border-radius:20px;overflow:hidden;margin:10px 0}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--lime),var(--cyan));border-radius:20px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{background:var(--panel2);padding:13px;border-radius:14px;border:1px solid var(--line)}.stat b{font-size:22px;display:block}.stat small{color:var(--muted)}
-button{border:0;border-radius:13px;padding:12px 15px;background:var(--lime);color:#10160c;font-weight:850;font-size:14px;cursor:pointer}button.secondary{background:#273646;color:var(--txt);border:1px solid #405166}button.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}button:disabled{opacity:.45}
-nav{position:fixed;bottom:0;left:0;right:0;background:#0e1621f2;backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5;padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
-nav button{background:transparent;color:var(--muted);padding:8px 4px;flex:1;max-width:125px;font-size:11px;border-radius:10px}nav button.active{background:#253344;color:var(--lime)}nav .ico{font-size:19px;display:block}
-.workout{border:1px solid var(--line);border-radius:14px;padding:12px;margin:9px 0;background:#111a25}
-.exercise{display:grid;grid-template-columns:1fr auto;gap:10px;padding:9px 0;border-bottom:1px solid #263342}.exercise:last-child{border:0}
-input{background:#0b131d;border:1px solid #405166;color:var(--txt);border-radius:9px;padding:9px;width:88px;font:inherit}
-label{display:block;color:var(--muted);font-size:12px;margin-bottom:4px}
-.day{border:1px solid var(--line);border-radius:10px;text-align:center;padding:8px 2px;min-height:62px;background:#111a25;font-size:12px}
-.day.done{border-color:var(--lime);background:#243326}.day.today{outline:2px solid var(--cyan)}.day b{display:block;font-size:15px}
-.badgeitem{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid #263342}.badgeitem:last-child{border:0}.emblem{font-size:27px;width:42px;text-align:center}.locked{opacity:.38;filter:grayscale(1)}
-.medal{display:inline-flex;align-items:center;gap:6px;background:#243343;border:1px solid #41566b;border-radius:12px;padding:8px 10px;margin:4px;font-size:12px}
-.notice{border-left:3px solid var(--orange);padding:9px 12px;background:#2a241e;border-radius:8px;color:#f3d6b9;font-size:12px;margin:10px 0}
-select{background:#0b131d;color:var(--txt);border:1px solid #405166;border-radius:9px;padding:10px}
-@media(min-width:650px){.grid.three{grid-template-columns:repeat(3,1fr)}}
+:root{--bg:#0a1018;--panel:#141e2a;--panel2:#1c2938;--line:#304154;--txt:#f4f7fa;--muted:#a4b2c2;--lime:#c7f36b;--cyan:#62d9df;--orange:#ffb16b;--red:#ff737d;--r:18px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 90% -10%,#263c4c 0,transparent 40%),var(--bg);color:var(--txt);font:15px/1.48 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:88px}
+header{max-width:920px;margin:auto;padding:18px 16px 12px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:21px;font-weight:950;letter-spacing:2px}.brand span{color:var(--lime)}.sub{font-size:10px;letter-spacing:2px;color:var(--muted)}
+main{max-width:920px;margin:auto;padding:0 14px}.view{display:none}.view.active{display:block}h1{font-size:27px;margin:8px 0 4px;line-height:1.15}h2{font-size:18px;margin:0 0 12px}h3{font-size:15px;margin:0 0 5px}p{color:var(--muted);margin:6px 0}.tiny{font-size:12px;color:var(--muted)}.muted{color:var(--muted)}
+.card{background:linear-gradient(145deg,var(--panel),#111a25);border:1px solid var(--line);border-radius:var(--r);padding:15px;margin:12px 0;box-shadow:0 9px 28px #0002}.hero{background:linear-gradient(120deg,#263d31,#172b35 70%,#17202c);border-color:#506c4e}
+.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.between{display:flex;align-items:center;justify-content:space-between;gap:10px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.stat{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px}.stat small{color:var(--muted)}.stat b{display:block;font-size:22px}.xp{font-size:38px;font-weight:950;color:var(--lime);letter-spacing:-1px}
+.pill{border:1px solid #42566a;background:#263748;border-radius:99px;padding:5px 10px;font-size:11px}.progress{height:9px;background:#2a3949;border-radius:99px;overflow:hidden;margin:10px 0}.progress i{height:100%;display:block;background:linear-gradient(90deg,var(--lime),var(--cyan))}
+button{border:0;border-radius:12px;padding:11px 14px;background:var(--lime);color:#11180d;font-weight:850;font-size:14px;cursor:pointer}button.secondary{background:#273849;color:var(--txt);border:1px solid #43596e}button.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}button.danger{background:#482a32;color:#ffdce0;border:1px solid #75414a}button:disabled{opacity:.4}
+input,select{background:#0b141e;border:1px solid #42566a;color:var(--txt);border-radius:9px;padding:9px;font:inherit;max-width:100%}input[type=number]{width:84px}input[type=checkbox]{width:21px;height:21px;accent-color:var(--lime)}label{font-size:12px;color:var(--muted);display:block}
+nav{position:fixed;z-index:10;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:2px;padding:7px 3px calc(7px + env(safe-area-inset-bottom));background:#0c1520f2;backdrop-filter:blur(14px);border-top:1px solid var(--line);overflow-x:auto}
+nav button{background:transparent;color:var(--muted);padding:6px 8px;min-width:58px;flex:1;max-width:125px;font-size:10px}nav button.active{background:#263849;color:var(--lime)}nav .ico{font-size:18px;display:block}
+.workoutCard,.exerciseCard{border:1px solid var(--line);background:#111b27;border-radius:14px;padding:12px;margin:9px 0}
+.setrow{display:grid;grid-template-columns:32px minmax(0,1fr) 78px 34px;gap:7px;align-items:center;padding:8px 0;border-top:1px solid #2b3a4b}.setrow:first-of-type{border-top:0}.setrow input[type=number]{width:72px;text-align:center;padding:8px}.setrow.done{background:#1b3026;border-radius:8px}.setrow.done .setnum{color:var(--lime)}
+.check{display:flex;align-items:center;justify-content:center}.setnum{font-size:12px;color:var(--muted);text-align:center}
+.tag{font-size:10px;color:var(--cyan);text-transform:uppercase;letter-spacing:1px}.notice{border-left:3px solid var(--orange);background:#30271f;color:#f5dec5;padding:10px 12px;border-radius:9px;font-size:12px;margin:10px 0}
+.barline{height:8px;background:#283849;border-radius:20px;overflow:hidden}.barline i{display:block;height:100%;background:var(--cyan)}
+.exerciseCard summary{cursor:pointer;font-weight:800}.exerciseCard details p{font-size:13px}.badgeitem{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #2b3949}.badgeitem:last-child{border:0}.emblem{font-size:26px;width:38px;text-align:center}.locked{opacity:.35;filter:grayscale(1)}
+.medal{display:inline-flex;gap:6px;align-items:center;padding:8px 10px;margin:4px;background:#243748;border:1px solid #40566a;border-radius:11px;font-size:12px}
+.day{min-height:58px;text-align:center;padding:7px 2px;border:1px solid var(--line);border-radius:9px;background:#111b27;font-size:11px}.day b{display:block;font-size:14px}.day.done{border-color:var(--lime);background:#22352a}.day.today{outline:2px solid var(--cyan)}
+.meter{font-size:12px;color:var(--muted)}.hidden{display:none!important}.smallbtn{padding:7px 10px;font-size:12px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 </head>
 <body>
-<header><div><div class="brand">IRON <span>GEORGE</span></div><div class="sub">BUILD YOUR LEGEND · SEASON 01</div></div><div class="pill" id="rankPill">🛡️ NOVÁČEK</div></header>
+<header><div><div class="brand">IRON <span>GEORGE</span></div><div class="sub">TRAIN HARD · TRACK EVERYTHING · NEVER STOP</div></div><span class="pill" id="rankPill">🩸 PRVNÍ KREV</span></header>
 <main>
-<section id="home" class="view active">
- <div class="card hero">
-  <div class="flex"><div><div class="tiny">TVÉ AKTUÁLNÍ SKÓRE</div><div class="xp" id="xp">0 XP</div><div id="titleNow">🩸 První krev</div></div><div style="font-size:55px">⚔️</div></div>
-  <div class="progress"><i id="xpbar" style="width:0%"></i></div><div class="flex tiny"><span id="nextTitle">Další titul: Klikový učeň</span><span id="xpNeed">0 / 100 XP</span></div>
- </div>
- <div class="grid three">
-  <div class="stat"><small>🔥 Série</small><b id="streak">0 dní</b></div><div class="stat"><small>💪 Kliky celkem</small><b id="pushTotal">0</b></div><div class="stat"><small>⏱️ Švihadlo</small><b id="ropeTotal">0 min</b></div>
- </div>
- <div class="card"><div class="flex"><h2>Dnešní mise</h2><span class="pill" id="todayLabel"></span></div><div id="todayWorkout"></div></div>
- <div class="card"><h2>Poslední úspěchy</h2><div id="recent"><p>Zatím žádné. První trénink čeká na tebe.</p></div></div>
- <div class="notice">Regenerace je součást tréninku. XP se začnou pomalu snižovat až po 10 dnech bez zaznamenané aktivity. Jeden volný den ti skóre nevezme.</div>
+<section id="dashboard" class="view active">
+ <div class="card hero"><div class="between"><div><div class="tiny">TVÉ SKÓRE</div><div class="xp" id="xp">0 XP</div><b id="titleNow">🩸 První krev</b></div><div style="font-size:52px">⚔️</div></div><div class="progress"><i id="xpbar" style="width:0%"></i></div><div class="between tiny"><span id="nextTitle">Další hodnost</span><span id="xpNeed">0 XP</span></div></div>
+ <div class="grid3"><div class="stat"><small>🔥 Série</small><b id="streak">0</b></div><div class="stat"><small>💪 Kliky</small><b id="pushTotal">0</b></div><div class="stat"><small>🪢 Švihadlo</small><b id="ropeTotal">0 min</b></div></div>
+ <div class="card"><div class="between"><h2>Dnešní mise</h2><span class="pill" id="todayLabel"></span></div><div id="todayPlan"></div><div class="row" style="margin-top:12px"><button onclick="startRecommended()">Zahájit dnešní trénink</button><button class="secondary" onclick="showView('train')">Vlastní trénink</button></div></div>
+ <div class="card"><h2>Poslední tréninky</h2><div id="recent"></div></div>
+ <div class="notice">Cíl není zničit se při každém tréninku. Většinu pracovních sérií konči s rezervou 1–3 čistých opakování. Ostrá bolest, motání hlavy nebo nezvyklá dušnost = okamžitě přerušit.</div>
 </section>
+
 <section id="plan" class="view">
- <h1>Tréninkový plán</h1><p>Osm týdnů postupného budování síly a kondice. Základní rytmus: pondělí, středa, pátek.</p>
- <div class="card"><div class="flex"><h2>Tvůj týden</h2><span class="pill" id="weekNo">TÝDEN 1 / 8</span></div><div class="grid" id="weekGrid"></div><p class="tiny">Tréninkové dny lze přesunout. Mezi náročnějšími jednotkami nech alespoň 24–48 hodin.</p></div>
- <div id="planDetails"></div>
- <div class="card"><h2>Pravidla pro progres</h2><p>• První 2 týdny začni s rezervou 2–3 opakování, necvič do selhání.</p><p>• Jakmile zvládneš všechny série čistě, přidej 1–2 opakování nebo 1–2 minuty švihadla.</p><p>• U kliků můžeš použít kliky o vyvýšenou oporu, pokud klasické zatím nejsou technicky čisté.</p><p>• Břišní cviky prováděj pomalu, bez tahání za krk. Při bolesti kloubů, zad, závrati či neobvyklé dušnosti trénink přeruš.</p></div>
+ <h1>Dlouhodobý plán</h1><p>Plán nemá konečný osmý týden. Běží v opakujících se čtyřtýdenních blocích: objem → progres → intenzita → odlehčení. Další blok navazuje podle tvých výsledků.</p>
+ <div class="card"><div class="between"><h2>Výchozí nastavení</h2><span class="pill" id="phasePill">BLOK 1</span></div><p>Zadej maximum technicky čistých kliků v jedné sérii (ne za cenu rozpadlé techniky). Program podle toho vypočítá pracovní cíle.</p><div class="row"><label>Čisté kliky v sérii</label><input id="maxPush" type="number" min="1" max="100" value="15"><button class="secondary" onclick="saveMax()">Uložit maximum</button></div><p class="tiny" id="maxAdvice">Nastavení lze kdykoliv změnit po kontrolním testu.</p></div>
+ <div id="weeklyPlan"></div>
+ <div class="card"><h2>Příprava před tréninkem</h2><p>Věnuj 5–8 minut rozhýbání zápěstí, loktů a ramen, několika lehkým klikům o oporu a postupnému zrychlení pohybu. Před švihadlem začni 2–3 minutami velmi lehkých přeskoků nebo nácvikem rytmu bez rychlosti. První pracovní série ber jako náběhovou.</p><p><b>Odpočinek:</b> 90–150 sekund mezi náročnými sériemi kliků, 45–75 sekund u břicha. U intervalů švihadla dodrž uvedenou pauzu.</p></div>
+ <div class="card"><h2>Jak se plán posouvá</h2><ul><li><b>Týden 1 – základ:</b> pevná technika, pracovní série s rezervou.</li><li><b>Týden 2 – objem:</b> přidej 1 opakování tam, kde byly všechny série čisté.</li><li><b>Týden 3 – intenzita:</b> náročnější varianta kliků nebo pomalejší negativní fáze, nikoliv bezhlavé přidávání opakování.</li><li><b>Týden 4 – odlehčení:</b> aplikace automaticky sníží počet pracovních sérií a cíle, ať se zotavíš.</li><li><b>Nový blok:</b> aplikace zvýší cíle jen tehdy, pokud dokončuješ tréninky bez zhoršení techniky.</li></ul></div>
 </section>
+
+<section id="train" class="view">
+ <h1>Tréninkový deník</h1><p>Vyber připravenou jednotku nebo si sestav vlastní. Každou sérii můžeš odškrtnout a upravit skutečný počet opakování.</p>
+ <div class="card"><div class="between"><h2>Rychlý start</h2><input id="sessionDate" type="date"></div><div class="grid">
+ <button onclick="startSession('pushA')">💪 Kliky A + břicho</button><button class="secondary" onclick="startSession('ropeA')">🪢 Švihadlo + core</button><button class="secondary" onclick="startSession('pushB')">🦾 Kliky B + břicho</button><button class="secondary" onclick="startSession('mixed')">🔥 Kombinovaný trénink</button></div></div>
+ <div class="card"><h2>Aktivní trénink</h2><div id="activeSession"><p>Žádný trénink není otevřený. Vyber jednotku výše nebo si vytvoř vlastní.</p></div></div>
+ <div class="card"><h2>Vlastní trénink</h2><p>Přidej jen cviky, které chceš dnes skutečně odcvičit.</p><div class="row"><select id="customExercise"></select><label>Série <input id="customSets" type="number" min="1" max="10" value="3"></label><label>Opak./sek. <input id="customReps" type="number" min="1" max="200" value="12"></label><button onclick="addCustomExercise()">Přidat</button></div><div id="customList"></div><button class="secondary" onclick="startCustom()">Spustit vlastní trénink</button></div>
+</section>
+
+<section id="library" class="view">
+ <h1>Knihovna cviků</h1><p>Technické návody, chyby a lehčí/těžší varianty. V aplikaci jsou pouze kliky, břišní cviky a švihadlo.</p>
+ <div class="card"><div class="row"><button class="secondary smallbtn" onclick="filterLibrary('push')">Kliky</button><button class="secondary smallbtn" onclick="filterLibrary('abs')">Břicho</button><button class="secondary smallbtn" onclick="filterLibrary('rope')">Švihadlo</button><button class="ghost smallbtn" onclick="filterLibrary('all')">Vše</button></div><div id="exerciseLibrary"></div></div>
+</section>
+
 <section id="calendar" class="view">
- <h1>Kalendář</h1><p>Tvůj tréninkový deník. Zeleně jsou dokončené jednotky.</p>
- <div class="card"><div class="flex"><button class="secondary" id="prevMonth">‹</button><h2 id="monthName"></h2><button class="secondary" id="nextMonth">›</button></div><div class="grid" id="calendarGrid" style="grid-template-columns:repeat(7,1fr);gap:5px;margin-top:12px"></div></div>
- <div class="card"><h2>Historie</h2><div id="history"><p>Zatím bez záznamů.</p></div></div>
+ <h1>Kalendář</h1><p>Dokončené jednotky, rozpracované tréninky a historie.</p>
+ <div class="card"><div class="between"><button class="secondary" onclick="changeMonth(-1)">‹</button><h2 id="monthName"></h2><button class="secondary" onclick="changeMonth(1)">›</button></div><div id="calendarGrid" class="grid" style="grid-template-columns:repeat(7,1fr);gap:5px;margin-top:12px"></div></div>
+ <div class="card"><h2>Historie</h2><div id="history"></div></div>
 </section>
+
 <section id="awards" class="view">
- <h1>Tituly & medaile</h1><p>Sto hodností. Každý XP bod tě posouvá blíž k další legendě.</p>
- <div class="card"><div class="flex"><h2>🏆 Tituly</h2><span class="pill" id="titleCount">0 / 100</span></div><div id="titles"></div></div>
- <div class="card"><h2>🎖️ Medaile za milníky</h2><div id="medals"></div></div>
+ <h1>Tituly & medaile</h1><p>100 hodností a sbírka milníků za dlouhodobou práci.</p>
+ <div class="card"><div class="between"><h2>🏆 Tituly</h2><span class="pill" id="titleCount">1 / 100</span></div><div id="titles"></div></div>
+ <div class="card"><h2>🎖️ Medaile</h2><div id="medals"></div></div>
 </section>
+
 <section id="stats" class="view">
- <h1>Statistiky</h1><p>Výkon, konzistence a dlouhodobý progres.</p>
- <div class="grid">
- <div class="stat"><small>Celkem XP</small><b id="sXP">0</b></div><div class="stat"><small>Tréninky</small><b id="sWorkouts">0</b></div>
- <div class="stat"><small>Celkem kliků</small><b id="sPush">0</b></div><div class="stat"><small>Břišní opakování</small><b id="sAbs">0</b></div>
- <div class="stat"><small>Švihadlo</small><b id="sRope">0 min</b></div><div class="stat"><small>Nejdelší série</small><b id="sBest">0 dní</b></div>
- </div>
- <div class="card"><h2>Rozložení tréninku</h2><div id="breakdown"></div></div>
- <div class="card"><h2>Nastavení a data</h2><p>Všechny záznamy se ukládají lokálně v tomto zařízení.</p><div class="row"><button class="secondary" id="export">Exportovat zálohu</button><button class="ghost" id="importBtn">Importovat zálohu</button><input id="importFile" type="file" accept="application/json" hidden></div><p class="tiny">Při vymazání dat prohlížeče můžeš o záznamy přijít. Pravidelně exportuj zálohu.</p></div>
+ <h1>Statistiky</h1><div class="grid">
+ <div class="stat"><small>Celkem XP</small><b id="sXP">0</b></div><div class="stat"><small>Tréninky</small><b id="sSessions">0</b></div><div class="stat"><small>Kliky</small><b id="sPush">0</b></div><div class="stat"><small>Břicho</small><b id="sAbs">0</b></div><div class="stat"><small>Švihadlo</small><b id="sRope">0 min</b></div><div class="stat"><small>Nejdelší série</small><b id="sBest">0 dní</b></div></div>
+ <div class="card"><h2>Výkonnostní rekordy</h2><div id="records"></div></div>
+ <div class="card"><h2>Záloha a data</h2><p>Data zůstávají v tomto prohlížeči. Po 14 dnech úplné neaktivity se odečte 1 % XP za každý další celý týden (nejvýše 10 % při jednom výpočtu). Před aktualizací aplikace doporučuji exportovat zálohu.</p><div class="row"><button id="export">Export zálohy</button><button class="secondary" onclick="document.getElementById('importFile').click()">Import zálohy</button><input id="importFile" type="file" accept="application/json" hidden></div><button class="danger smallbtn" onclick="resetDraft()">Zrušit rozpracovaný trénink</button></div>
 </section>
 </main>
 <nav>
-<button class="active" data-tab="home"><span class="ico">⌂</span>Přehled</button>
-<button data-tab="plan"><span class="ico">⚡</span>Plán</button>
-<button data-tab="calendar"><span class="ico">▦</span>Kalendář</button>
-<button data-tab="awards"><span class="ico">🏆</span>Ocenění</button>
-<button data-tab="stats"><span class="ico">▥</span>Statistiky</button>
+<button class="active" data-view="dashboard"><span class="ico">⌂</span>Přehled</button><button data-view="plan"><span class="ico">⚡</span>Plán</button><button data-view="train"><span class="ico">✓</span>Cvičit</button><button data-view="library"><span class="ico">ⓘ</span>Cviky</button><button data-view="calendar"><span class="ico">▦</span>Kalendář</button><button data-view="awards"><span class="ico">🏆</span>Ocenění</button><button data-view="stats"><span class="ico">▥</span>Statistiky</button>
 </nav>
 <script>
-const $=id=>document.getElementById(id);
-const today=()=>{let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
-const iso=(d)=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-const names=["První krev","Klikový učeň","Břišní novic","Jiskra vytrvalosti","Železný začátek","Pán prvních deseti","Švihadlový adept","Strážce středu těla","Pěsti z oceli","Lovec opakování","Rytíř kliků","Břišní průzkumník","Tepelný motor","Mistr tempa","Nezlomný začátečník","Železná paže","Břišní válečník","Skokan přes hranice","Pán tří sérií","Krotitel únavy","Klikový veterán","Ocelové jádro","Rytíř švihadla","Vládce pravidelnosti","Tichý dříč","Pán živých kladiv","Břišní alchymista","Stroj na kliky","Lovec minut","Strážce výdrže","Železný gladiátor","Vládce břišáků","Mistr odrazu","Ocelový hrudník","Přemožitel lenosti","Generál opakování","Pán pevného středu","Blesk na švihadle","Neúnavný bojovník","Král série","Kladivová pěst","Břišní kat","Vládce rytmu","Mistr dlouhého dechu","Železný titán","Pán sta kliků","Šampion středu těla","Švihadlový démon","Neústupná zeď","Legenda disciplíny","Válečník z oceli","Císař kliků","Břicho z granitu","Pán rychlých nohou","Mistr nekonečna","Král železných paží","Drtič gravitace","Vládce tisíce opakování","Ohnivý motor","Nepokořitelný","Titan klikového řádu","Břišní monstrum","Pán tempa","Švihací legenda","Železný fénix","Mistr pevné vůle","Generál výdrže","Král tří disciplín","Ocelová bestie","Pán živých kladiv II","Vládce arény","Břišní nadvláda","Rychlostní démon","Nezlomný titan","Válečný stroj","Hrdina tisíce kliků","Král švihadla","Monument disciplíny","Železný kolos","Pán nekonečných sérií","Mistr bolesti*","Vůdce smečky","Břišní imperátor","Ocelový berserker","Pán gravitace","Věčný šampion","Vládce tří živlů","Ničitel limitů","Král ocelového těla","Velmistr kliků","Monstrum vytrvalosti","Legenda železa","Nadčlověk tréninku","Lidské monstrum","Apex bojovník","Nesmrtelný titán","IRON GEORGE – legenda","Pán poslední série","Mýtický železňák","Legenda 29K"];
-const icons=["🩸","🧑‍🎓","🧱","✨","🛡️","🔟","🪢","🎯","🥊","🔁","⚔️","🧭","🔥","⏱️","💪","🦾","🛡️","🦘","3️⃣","🧊","🏋️","🪨","🪢","📆","🐺","🔨","⚗️","⚙️","⌛","🧿","🏟️","👑","⚡","🛡️","🚫","🎖️","🧱","💨","♾️","👑","🔨","🗡️","🥁","🌬️","🗿","💯","🏆","😈","🧱","📜","⚔️","👑","🪨","⚡","♾️","👑","🌌","🔢","🔥","🛡️","🦾","👹","🎼","💨","🔥","🧠","🎖️","👑","🐻","🔨","🏟️","👑","⚡","🛡️","🤖","💯","👑","🏛️","🗿","♾️","💥","🐺","👑","🦾","👑","♾️","🏆","🌪️","👑","🏋️","👹","📖","🧬","👾","🚀","♾️","🏆","🗡️","🐉","👑"];
-const thresholds=Array.from({length:100},(_,i)=>i===0?0:Math.round(100*Math.pow(i,1.55)));
-const medalDefs=[
- ["🩸","První krev","Dokonči první trénink",s=>s.workouts>=1],
- ["💪","Prvních 100 kliků","Nasbírej 100 kliků",s=>s.push>=100],
- ["🧱","Pevné jádro","Nasbírej 100 břišních opakování",s=>s.abs>=100],
- ["🪢","Prvních 30 minut","Nasbírej 30 minut švihadla",s=>s.rope>=30],
- ["🔥","Týdenní válečník","Dokonči 3 tréninky",s=>s.workouts>=3],
- ["⚔️","Ocelová disciplína","Dokonči 10 tréninků",s=>s.workouts>=10],
- ["🏅","Stovka tréninků","Dokonči 100 tréninků",s=>s.workouts>=100],
- ["🦾","Pět set kliků","Nasbírej 500 kliků",s=>s.push>=500],
- ["👑","Tisíc kliků","Nasbírej 1 000 kliků",s=>s.push>=1000],
- ["🧘","Tisíc břišních opakování","Nasbírej 1 000 břišních opakování",s=>s.abs>=1000],
- ["⚡","Švihací motor","Nasbírej 180 minut švihadla",s=>s.rope>=180],
- ["📆","Měsíc disciplíny","Dosáhni série 30 dní",s=>s.best>=30],
- ["🏆","IRON GEORGE","Dosáhni 50 000 XP",s=>s.xp>=50000]
-];
-const plans=[
- {name:"Základní síla",focus:"Technika a zvyk",items:[["Kliky",3,6,"opakování"],["Zkracovačky",2,10,"opakování"],["Prkno",2,20,"sekundy"],["Švihadlo",4,1,"minuty"]]},
- {name:"Budování",focus:"Lehké navýšení objemu",items:[["Kliky",3,8,"opakování"],["Zvedání kolen vleže",2,10,"opakování"],["Prkno",2,25,"sekundy"],["Švihadlo",4,1.5,"minuty"]]},
- {name:"Objem",focus:"Více kvalitních opakování",items:[["Kliky",3,10,"opakování"],["Zkracovačky",3,12,"opakování"],["Zvedání kolen vleže",2,10,"opakování"],["Švihadlo",5,1.5,"minuty"]]},
- {name:"Výdrž",focus:"Delší práce v kontrolovaném tempu",items:[["Kliky",3,10,"opakování"],["Prkno",3,30,"sekundy"],["Zvedání kolen vleže",3,12,"opakování"],["Švihadlo",5,2,"minuty"]]},
- {name:"Síla a kondice",focus:"Přidáváme jednu pracovní sérii",items:[["Kliky",4,8,"opakování"],["Zkracovačky",3,15,"opakování"],["Prkno",3,35,"sekundy"],["Švihadlo",5,2,"minuty"]]},
- {name:"Pevné jádro",focus:"Stabilita a souvislejší kardio",items:[["Kliky",4,10,"opakování"],["Zvedání kolen vleže",3,12,"opakování"],["Prkno",3,40,"sekundy"],["Švihadlo",6,2,"minuty"]]},
- {name:"Pokročilý rytmus",focus:"Vyšší objem, stále bez selhání",items:[["Kliky",4,12,"opakování"],["Zkracovačky",3,18,"opakování"],["Prkno",3,45,"sekundy"],["Švihadlo",6,2.5,"minuty"]]},
- {name:"Test a upevnění",focus:"Ověř progres, nechoď do maxima za každou cenu",items:[["Kliky",3,12,"opakování"],["Zvedání kolen vleže",3,15,"opakování"],["Prkno",3,45,"sekundy"],["Švihadlo",6,3,"minuty"]]}
-];
-let data=JSON.parse(localStorage.getItem("ironGeorgeV1")||'{"xp":0,"workouts":[],"lastActive":null,"decayDate":null,"best":0,"streak":0,"start":null}');
-let monthCursor=new Date();monthCursor.setDate(1);
-function save(){localStorage.setItem("ironGeorgeV1",JSON.stringify(data))}
-function totals(){return data.workouts.reduce((a,w)=>({push:a.push+w.push,abs:a.abs+w.abs,rope:a.rope+w.rope,workouts:a.workouts+1}),{push:0,abs:0,rope:0,workouts:0})}
-function currentTitle(){let idx=0;thresholds.forEach((t,i)=>{if(data.xp>=t)idx=i});return idx}
-function renderHome(){
- let t=totals(),idx=currentTitle(),next=Math.min(99,idx+1),base=thresholds[idx],end=thresholds[next],pct=idx===99?100:Math.max(0,Math.min(100,(data.xp-base)/(end-base)*100));
- $("xp").textContent=Math.floor(data.xp)+" XP";$("titleNow").textContent=icons[idx]+" "+names[idx];$("rankPill").textContent=icons[idx]+" "+names[idx].toUpperCase();
- $("xpbar").style.width=pct+"%";$("nextTitle").textContent=idx===99?"Nejvyšší hodnost dosažena":`Další titul: ${names[next]}`;$("xpNeed").textContent=idx===99?"MAX":`${Math.floor(data.xp)} / ${end} XP`;
- $("streak").textContent=data.streak+" dní";$("pushTotal").textContent=t.push;$("ropeTotal").textContent=t.rope+" min";$("todayLabel").textContent=new Date().toLocaleDateString("cs-CZ",{weekday:"short",day:"numeric",month:"short"});
- const dow=new Date().getDay(),week=Math.min(7,Math.floor((data.workouts.length)/3)),session=(dow===1?0:dow===3?1:dow===5?2:-1);
- let html="";
- if(session<0)html=`<p>Dnes je den regenerace nebo volitelná procházka. Další plánovaná jednotka: ${["neděle","pondělí","úterý","středa","čtvrtek","pátek","sobota"][(1-dow+7)%7]}.</p>`;
- else {let p=plans[Math.min(7,Math.floor(data.workouts.length/3))];html=`<h3>${["Síla + břicho","Kardio + střed těla","Komplexní jednotka"][session]}</h3><p>${p.name} · ${p.focus}</p><div class="tiny">${p.items.map(x=>`${x[0]}: ${x[1]}×${x[2]} ${x[3]}`).join(" · ")}</div><div style="margin-top:12px"><button onclick="openWorkout(${session})">Zahájit / zaznamenat trénink</button></div>`}
- $("todayWorkout").innerHTML=html;
- $("recent").innerHTML=data.workouts.slice(-3).reverse().map(w=>`<div class="badgeitem"><span class="emblem">✅</span><div><b>${w.date}</b><div class="tiny">${w.push} kliků · ${w.abs} břišních · ${w.rope} min švihadla · +${w.earned} XP</div></div></div>`).join("")||"<p>Zatím žádné. První trénink čeká na tebe.</p>";
+const TITLES=["První krev", "Klikový učeň", "Břišní novic", "Jiskra vytrvalosti", "Železný začátek", "Pán prvních deseti", "Švihadlový adept", "Strážce středu těla", "Pěsti z oceli", "Lovec opakování", "Rytíř kliků", "Břišní průzkumník", "Tepelný motor", "Mistr tempa", "Nezlomný začátečník", "Železná paže", "Břišní válečník", "Skokan přes hranice", "Pán tří sérií", "Krotitel únavy", "Klikový veterán", "Ocelové jádro", "Rytíř švihadla", "Vládce pravidelnosti", "Tichý dříč", "Pán živých kladiv", "Břišní alchymista", "Stroj na kliky", "Lovec minut", "Strážce výdrže", "Železný gladiátor", "Vládce břišáků", "Mistr odrazu", "Ocelový hrudník", "Přemožitel lenosti", "Generál opakování", "Pán pevného středu", "Blesk na švihadle", "Neúnavný bojovník", "Král série", "Kladivová pěst", "Břišní kat", "Vládce rytmu", "Mistr dlouhého dechu", "Železný titán", "Pán sta kliků", "Šampion středu těla", "Švihadlový démon", "Neústupná zeď", "Legenda disciplíny", "Válečník z oceli", "Císař kliků", "Břicho z granitu", "Pán rychlých nohou", "Mistr nekonečna", "Král železných paží", "Drtič gravitace", "Vládce tisíce opakování", "Ohnivý motor", "Nepokořitelný", "Titan klikového řádu", "Břišní monstrum", "Pán tempa", "Švihací legenda", "Železný fénix", "Mistr pevné vůle", "Generál výdrže", "Král tří disciplín", "Ocelová bestie", "Pán živých kladiv II", "Vládce arény", "Břišní nadvláda", "Rychlostní démon", "Nezlomný titan", "Válečný stroj", "Hrdina tisíce kliků", "Král švihadla", "Monument disciplíny", "Železný kolos", "Pán nekonečných sérií", "Mistr bolesti*", "Vůdce smečky", "Břišní imperátor", "Ocelový berserker", "Pán gravitace", "Věčný šampion", "Vládce tří živlů", "Ničitel limitů", "Král ocelového těla", "Velmistr kliků", "Monstrum vytrvalosti", "Legenda železa", "Nadčlověk tréninku", "Lidské monstrum", "Apex bojovník", "Nesmrtelný titán", "IRON GEORGE – legenda", "Pán poslední série", "Mýtický železňák", "Legenda 29K"], TITLE_ICONS=["🩸", "🧑‍🎓", "🧱", "✨", "🛡️", "🔟", "🪢", "🎯", "🥊", "🔁", "⚔️", "🧭", "🔥", "⏱️", "💪", "🦾", "🛡️", "🦘", "3️⃣", "🧊", "🏋️", "🪨", "🪢", "📆", "🐺", "🔨", "⚗️", "⚙️", "⌛", "🧿", "🏟️", "👑", "⚡", "🛡️", "🚫", "🎖️", "🧱", "💨", "♾️", "👑", "🔨", "🗡️", "🥁", "🌬️", "🗿", "💯", "🏆", "😈", "🧱", "📜", "⚔️", "👑", "🪨", "⚡", "♾️", "👑", "🌌", "🔢", "🔥", "🛡️", "🦾", "👹", "🎼", "💨", "🔥", "🧠", "🎖️", "👑", "🐻", "🔨", "🏟️", "👑", "⚡", "🛡️", "🤖", "💯", "👑", "🏛️", "🗿", "♾️", "💥", "🐺", "👑", "🦾", "👑", "♾️", "🏆", "🌪️", "👑", "🏋️", "👹", "📖", "🧬", "👾", "🚀", "♾️", "🏆", "🗡️", "🐉", "👑"];
+const thresholds=Array.from({length:100},(_,i)=>i===0?0:Math.round(110*Math.pow(i,1.58)));
+const EX={
+ push_standard:{name:"Klasické kliky",cat:"push",unit:"opak.",desc:"Dlaně polož přibližně pod ramena, prsty roztažené. Tělo drž v jedné linii od hlavy po paty, zpevni břicho a hýždě. Kontrolovaně klesej, lokty směřují šikmo dozadu (zhruba 30–60° od trupu), hrudník přibliž k podlaze a vytlač se vzhůru. Vydechuj při vytlačení.",mistakes:"Propadlá bedra, vystrčený zadek, lokty kolmo do stran, poloviční rozsah a zadržování dechu.",easy:"Kliky o pevnou vyvýšenou oporu nebo na kolenou.",hard:"Tempo kliky, pauza dole nebo mírně vyvýšené nohy.",cue:"Tělo jako prkno. Hrudník dolů, podlaha od sebe."},
+ push_incline:{name:"Kliky o vyvýšenou oporu",cat:"push",unit:"opak.",desc:"Dlaně polož na stabilní stůl, lavici nebo pevnou oporu. Čím vyšší opora, tím lehčí cvik. Udrž tělo rovné, hrudník přibliž k hraně a vytlač se zpět.",mistakes:"Nestabilní opora, prohnutí beder, hlava napřed.",easy:"Zvol vyšší oporu.",hard:"Sniž výšku opory až ke klasickým klikům.",cue:"Zpevni střed a pohybuj celým tělem jako jedním kusem."},
+ push_knee:{name:"Kliky na kolenou",cat:"push",unit:"opak.",desc:"Klečni, dlaně dej pod ramena a vytvoř přímou linii od hlavy přes boky ke kolenům. Pokrč lokty, kontrolovaně přibliž hrudník k zemi a vytlač se.",mistakes:"Zlom v bedrech, hlava svěšená, příliš široké lokty.",easy:"Menší rozsah nebo vyšší opora.",hard:"Klasické kliky.",cue:"Pevný trup, žádné vlnění."},
+ push_wide:{name:"Široké kliky",cat:"push",unit:"opak.",desc:"Dlaně polož o něco šířeji než u klasických kliků, ne extrémně daleko. Lokty drž pod kontrolou a klesej do rozsahu bez bolesti ramen. Vytlač se plynule.",mistakes:"Přehnaně široký úchop, lokty vytočené do pravého úhlu, propadnutí ramen.",easy:"Vrať ruce blíž k šířce ramen.",hard:"Tempo 3 sekundy dolů.",cue:"Šířka je jen mírně větší než ramena."},
+ push_close:{name:"Úzké kliky",cat:"push",unit:"opak.",desc:"Dlaně dej blíže k sobě než u klasického kliku, ale ne nutně až k dotyku. Lokty veď podél trupu, tělo drž pevné a vytlač se bez zhoupnutí.",mistakes:"Lokty do stran, zápěstí přetížená, boky padají.",easy:"Zvol mírně širší postavení rukou nebo kliky na kolenou.",hard:"Postupně zužuj postavení rukou.",cue:"Lokty blízko těla, zápěstí pod kontrolou."},
+ push_diamond:{name:"Diamantové kliky",cat:"push",unit:"opak.",desc:"Palce a ukazováky vytvoří pod hrudníkem tvar diamantu nebo úzkého trojúhelníku. Zpevni trup, klesej pomalu a lokty drž blízko těla. Použij jen rozsah, který nebolí zápěstí ani ramena.",mistakes:"Přetěžování zápěstí, lokty do stran, propadlé boky.",easy:"Rozšiř ruce do úzkých kliků.",hard:"Přidej pomalou excentrickou fázi.",cue:"Nejdřív čistá technika, ne co nejužší ruce."},
+ push_decline:{name:"Kliky s nohama na vyvýšení",cat:"push",unit:"opak.",desc:"Nohy polož na stabilní nízkou oporu, dlaně na zem pod rameny. Tělo drž pevné, kontrolovaně klesej a vytlač se. Začni s malým zvýšením.",mistakes:"Příliš vysoká opora, prohnutí beder, bolest ramen.",easy:"Klasické kliky.",hard:"Postupně zvyšuj oporu jen při bezbolestné technice.",cue:"Malé zvýšení stačí; trup zůstává pevný."},
+ push_tempo:{name:"Tempo kliky 3–1–1",cat:"push",unit:"opak.",desc:"Proveď klasický klik, ale dolů klesej celé 3 sekundy, na spodní pozici na 1 sekundu zastav a plynule vytlač vzhůru. Každé opakování kontroluj.",mistakes:"Zkracování spodní fáze, zadržování dechu, ztráta rovné linie.",easy:"Použij méně opakování.",hard:"Přidej pauzu 2 sekundy dole.",cue:"Počítej 1–2–3 dolů, stop, vzhůru."},
+ push_pause:{name:"Kliky s pauzou dole",cat:"push",unit:"opak.",desc:"Klesej jako u klasického kliku, zastav těsně nad podlahou na 1–2 sekundy bez položení těla a potom se vytlač. Udržuj napětí celého trupu.",mistakes:"Odpočinek na podlaze, propadnutí beder, odraz ze spodní pozice.",easy:"Pauza kratší nebo kliky o oporu.",hard:"Pauzu prodluž na 3 sekundy.",cue:"Zastav těsně nad zemí, neztrácej napětí."},
+ push_pike:{name:"Pike kliky",cat:"push",unit:"opak.",desc:"Zaujmi pozici obráceného V: boky vysoko, ruce přibližně na šířku ramen. Pokrč lokty a spouštěj temeno hlavy směrem k prostoru mezi dlaněmi, potom vytlač zpět. Začni malým rozsahem.",mistakes:"Lokty do stran, přetížený krk, nekontrolovaný pád hlavy.",easy:"Pike pozice s menším rozsahem nebo rukama na vyvýšené opoře.",hard:"Zvyšuj rozsah postupně.",cue:"Ramena pracují, hlava se nedotýká země."},
+ abs_crunch:{name:"Zkracovačky",cat:"abs",unit:"opak.",desc:"Lehni na záda, kolena pokrčená a chodidla na zemi. Ruce polož lehce na hrudník nebo ke spánkům. S výdechem zvedni lopatky a přibliž hrudník k pánvi; bedra zůstávají na podložce. Pomalu se vrať.",mistakes:"Tahání za hlavu, švih, zvedání celého trupu, tah krkem.",easy:"Menší rozsah.",hard:"Zpomal návrat na 3 sekundy.",cue:"Zvedni lopatky, ne celý trup."},
+ abs_reverse:{name:"Obrácené zkracovačky",cat:"abs",unit:"opak.",desc:"Lehni na záda, kolena pokrčená nad boky. S výdechem podsazuj pánev a přitahuj kolena směrem k hrudníku, kostrč se lehce odlepí od země. Pomalu vrať bez zhoupnutí.",mistakes:"Švih nohama, houpání, přehnané přitahování kolen.",easy:"Menší rozsah, chodidla blíže k zemi.",hard:"Pomalejší spouštění.",cue:"Pánev roluje vzhůru; nohy jen následují."},
+ abs_legraise:{name:"Zvedání pokrčených nohou",cat:"abs",unit:"opak.",desc:"Lehni na záda, kolena pokrčená. Zpevni břicho a pomalu spouštěj chodidla směrem k podlaze jen tak nízko, aby se bedra neprohýbala. Vrať kolena nad boky.",mistakes:"Prohnutí beder, rychlé spouštění, švih.",easy:"Zkrať rozsah.",hard:"Postupně natahuj nohy.",cue:"Bedra zůstávají přitisknutá k podložce."},
+ abs_straightleg:{name:"Zvedání natažených nohou",cat:"abs",unit:"opak.",desc:"Lehni na záda, nohy natažené. Zpevni břicho a s kontrolou zvedej nohy vzhůru, poté je pomalu spouštěj, aniž by se bedra odlepila nebo prohnula. Rozsah uprav podle kontroly beder.",mistakes:"Prohýbání zad, švih, spouštění příliš nízko.",easy:"Pokrčená kolena.",hard:"Pomalejší spouštění nebo krátká pauza.",cue:"Kvalitní rozsah je důležitější než nízké paty."},
+ abs_bicycle:{name:"Bicycle crunch",cat:"abs",unit:"opak./str.",desc:"Lehni na záda, ruce lehce u spánků. Zvedni lopatky, střídavě přibližuj pravý loket k levému koleni a levý loket k pravému. Druhou nohu natahuj, ale bedra drž stabilní. Otáčej hrudníkem, netahej za krk.",mistakes:"Tah za hlavu, rychlé šlapání bez rotace trupu, bedra se odlepují.",easy:"Nohy drž výše a zmenši rozsah.",hard:"Zpomal a podrž rotaci.",cue:"Rotuje hrudník, ne jen lokty."},
+ abs_deadbug:{name:"Dead bug",cat:"abs",unit:"opak./str.",desc:"Lehni na záda, paže vzhůru, kyčle a kolena v pravém úhlu. S výdechem pomalu natahuj protilehlou ruku a nohu směrem k podlaze. Vrať a vystřídej strany. Bedra drž stabilně.",mistakes:"Prohnutí beder, příliš rychlý pohyb, ztráta koordinace.",easy:"Pohybuj pouze nohama nebo zkrať rozsah.",hard:"Natahuj končetiny blíže k podlaze.",cue:"Pomalý pohyb, pevná bedra."},
+ abs_plank:{name:"Prkno",cat:"abs",unit:"sek.",desc:"Opři se o předloktí a špičky, lokty pod rameny. Zpevni břicho a hýždě, tělo drž v přímce. Dýchej plynule a nepovoluj bedra. Ukonči sérii dříve, než se technika rozpadne.",mistakes:"Propadlá bedra, vystrčený zadek, zadržování dechu.",easy:"Prkno na kolenou.",hard:"Přidej 5–10 sekund nebo delší páku až po zvládnutí techniky.",cue:"Pevný trup, klidný dech."},
+ abs_sideplank:{name:"Boční prkno",cat:"abs",unit:"sek./str.",desc:"Lehni na bok, loket pod ramenem. Zvedni boky tak, aby hlava, trup a nohy tvořily přímku. Drž pozici a dýchej. Poté vystřídej strany.",mistakes:"Rameno vytažené k uchu, boky klesají, rotace trupu.",easy:"Pokrč kolena a opři se o ně.",hard:"Natažené nohy nebo delší výdrž.",cue:"Zvedni bok a drž tělo v jedné linii."},
+ abs_hollow:{name:"Hollow hold",cat:"abs",unit:"sek.",desc:"Lehni na záda, podsadíš pánev a přitiskni bedra k podložce. Zvedni lopatky, paže natáhni nad hlavu a nohy zvedni nízko nad zem. Drž pozici bez prohnutí beder.",mistakes:"Bedra se odlepí, příliš nízké nohy, zadržení dechu.",easy:"Kolena pokrčená, ruce podél těla.",hard:"Nohy níže a paže dál za hlavu.",cue:"Bedra přilepená k zemi."},
+ abs_heeltap:{name:"Dotyky pat",cat:"abs",unit:"opak./str.",desc:"Lehni na záda, kolena pokrčená, chodidla na zemi. Lehce zvedni lopatky a střídavě se nakláněj do stran, abys dosáhl rukou k patě. Pohyb je krátký a kontrolovaný.",mistakes:"Tahání krku, houpání celým trupem, zadržování dechu.",easy:"Menší rozsah.",hard:"Zpomal a přidej opakování.",cue:"Krátké boční stažení břišních svalů."},
+ abs_mountain:{name:"Mountain climbers",cat:"abs",unit:"opak./str.",desc:"Zaujmi vysoký vzpor jako na začátku kliku. Střídavě přitahuj kolena pod trup, boky drž co nejstabilnější. Začni pomalu, teprve potom zvyšuj tempo.",mistakes:"Skákání boků nahoru a dolů, propad ramen, příliš rychlý nekontrolovaný pohyb.",easy:"Pomalé střídání nohou.",hard:"Zrychli na intervaly 20–30 sekund.",cue:"Ramena nad dlaněmi, trup stabilní."},
+ rope_basic:{name:"Základní přeskok",cat:"rope",unit:"min",desc:"Lokty drž blízko těla, otáčej švihadlem hlavně zápěstím. Skákej nízko, přibližně 1–2 cm nad zemí, dopadej měkce na přední část chodidla. Pohled vpřed a trup vzpřímený.",mistakes:"Vysoké výskoky, velké kroužení pažemi, tvrdé dopady, příliš dlouhé švihadlo.",easy:"Přeskoky bez švihadla nebo krátké intervaly.",hard:"Delší intervaly nebo střídavý krok.",cue:"Malý skok, měkký dopad, pracují zápěstí."},
+ rope_boxer:{name:"Boxerský krok",cat:"rope",unit:"min",desc:"Při každém přeskoku přenášej váhu z jedné nohy na druhou, jako lehký běžecký krok. Kolena zůstávají měkká, ramena uvolněná a ruce blízko boků.",mistakes:"Příliš velké přenášení váhy, vysoké skoky, napětí v ramenou.",easy:"Základní přeskok.",hard:"Zvyš frekvenci kroků.",cue:"Lehký rytmus, uvolněná ramena."},
+ rope_alternate:{name:"Střídavé přeskoky",cat:"rope",unit:"min",desc:"Střídej pravou a levou nohu jako při lehkém běhu na místě. Dopad je tichý a krátký, švihadlo se otáčí zápěstími. Začni pomalým rytmem.",mistakes:"Vysoká kolena, dupání, ruce daleko od těla.",easy:"Boxerský krok.",hard:"Přidej krátké rychlé intervaly.",cue:"Krátké a tiché kroky."}
+};
+const templates={
+ pushA:{title:"Kliky A · objem + břicho",desc:"Hlavní tlakový den. Pracuj tvrdě, ale nech 1–3 opakování v rezervě.",items:[["push_standard",4,"main"],["push_wide",2,"assist"],["abs_crunch",2,15],["abs_reverse",2,12],["abs_plank",2,40]]},
+ ropeA:{title:"Švihadlo · intervaly + core",desc:"8 kol: 45 sekund přeskoků / 30 sekund odpočinku. Core odcvič kontrolovaně.",items:[["rope_basic",8,"rope"],["abs_deadbug",2,10],["abs_bicycle",2,12]]},
+ pushB:{title:"Kliky B · síla + břicho",desc:"Jiný úhel a tempo. Pokud ramena nebo zápěstí bolí, nahraď cvik lehčí variantou.",items:[["push_tempo",3,"main"],["push_close",2,"assist"],["push_pike",2,6],["abs_legraise",2,10],["abs_sideplank",2,30]]},
+ mixed:{title:"Kombinace · výkon",desc:"Třetí, kratší tlakový stimul a druhá dávka švihadla: 8 kol po 45 sekundách / 30 sekund odpočinku.",items:[["push_pause",2,"assist"],["rope_boxer",8,"rope"],["abs_hollow",2,20],["abs_heeltap",2,15]]}
+};
+let state=loadState(),monthCursor=new Date();monthCursor.setDate(1),customItems=[];
+function loadState(){
+ let raw=localStorage.getItem("ironGeorgeV3");
+ if(raw){try{return JSON.parse(raw)}catch{}}
+ let old={};try{old=JSON.parse(localStorage.getItem("ironGeorgeV1")||"{}")}catch{}
+ return {xp:Number(old.xp)||0,workouts:Array.isArray(old.workouts)?old.workouts.map(w=>({...w,id:w.id||("legacy-"+w.date),items:[],legacy:true})):[],maxPush:15,block:1,streak:Number(old.streak)||0,best:Number(old.best)||0,lastActive:old.lastActive||null,draft:null,custom:[]};
 }
-function sessionItems(kind){
- let all=plans[Math.min(7,Math.floor(data.workouts.length/3))].items;
- if(kind===0)return all.filter(x=>x[0]!=="Švihadlo");
- if(kind===1)return all.filter(x=>x[0]!=="Kliky");
- return all;
+function save(){localStorage.setItem("ironGeorgeV3",JSON.stringify(state))}
+function iso(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
+function today(){return iso(new Date())}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function showView(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===id));if(id==="train")renderDraft();if(id==="library")renderLibrary();if(id==="plan")renderPlan()}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>showView(b.dataset.view));
+function currentTitle(){let ix=0;thresholds.forEach((t,i)=>{if(state.xp>=t)ix=i});return ix}
+function totals(){let a={push:0,abs:0,rope:0,plank:0,sessions:state.workouts.length};state.workouts.forEach(w=>{a.push+=w.push||0;a.abs+=w.abs||0;a.rope+=w.rope||0;a.plank+=w.plank||0});return a}
+function currentCycleWeek(){let days=state.workouts.length?Math.floor(state.workouts.length/4):0;return (days%4)+1}
+function repTargets(id,role,week,block){
+ let max=Math.max(1,Number(state.maxPush)||15),main=max<8?Math.max(6,Math.round(max*1.4)):Math.max(4,Math.round(max*.58)),assist=max<8?Math.max(5,Math.round(max*1.1)):Math.max(4,Math.round(max*.42));
+ let target=role==="main"?main:role==="assist"?assist:0;target+=Math.min(4,block);
+ if(week===2&&target)target+=1;
+ if(week===3&&target)target+=2;
+ if(week===4&&target)target=Math.max(3,Math.round(target*.7));
+ if(id==="push_pike")target=Math.max(4,Math.min(10,Math.round(max*.25)))+Math.min(4,block);
+ return target;
 }
-function openWorkout(kind){
- let items=sessionItems(kind);
- let fields=items.map((x,i)=>`<div class="exercise"><div><b>${x[0]}</b><div class="tiny">Plán: ${x[1]} × ${x[2]} ${x[3]}</div></div><div><label>Skutečnost (součet)</label><input type="number" min="0" id="v${i}" value="${x[1]*x[2]}"></div></div>`).join("");
- $("todayWorkout").innerHTML=`<h3>${["Síla + břicho","Kardio + střed těla","Komplexní jednotka"][kind]}</h3>${fields}<div class="row" style="margin-top:12px"><button onclick="finishWorkout(${kind})">Dokončit a získat XP</button><button class="secondary" onclick="renderHome()">Zrušit</button></div><p class="tiny">U švihadla zadávej celkový počet minut. U prkna sekundy, u ostatních cviků opakování.</p>`;
+function buildSession(key,date=today()){
+ let t=templates[key],week=currentCycleWeek(),successful=state.workouts.filter(w=>(w.completionRate||0)>=.75).length,block=Math.floor(successful/16);
+ let items=t.items.map(([originalId,sets,role])=>{
+  let id=Number(state.maxPush)<8&&EX[originalId].cat==="push"?"push_incline":originalId;
+  let ex=EX[id],unit=ex.unit,goal=role==="main"||role==="assist"?repTargets(id,role,week):role==="rope"?(week===4?6:week===3?10:8):role;
+  if(id==="rope_basic"||id==="rope_boxer")goal=week===4?0.5:week===3?Math.min(1.25,1+block*.05):Math.min(1.25,0.75+block*.05);
+  if(id==="abs_plank"||id==="abs_sideplank"||id==="abs_hollow")goal=week===4?Math.max(15,Math.round(goal*.7)):goal+Math.min(15,block*5);
+  if(id.startsWith("abs_")&&unit!=="sek.")goal=week===4?Math.max(6,Math.round(goal*.75)):goal+Math.min(4,block);
+  let actualSets=week===4?Math.max(1,Math.round(sets*.7)):sets;
+  return {id,name:ex.name,cat:ex.cat,unit,sets:Array.from({length:actualSets},()=>({target:goal,actual:goal,done:false}))};
+ });
+ return {id:"s-"+Date.now()+"-"+Math.random().toString(36).slice(2,7),key,title:t.title,date,desc:t.desc,items,created:new Date().toISOString()};
 }
-function finishWorkout(kind){
- let items=sessionItems(kind),vals=items.map((_,i)=>Math.max(0,Number($("v"+i).value)||0));
- let push=0,abs=0,rope=0;
- items.forEach((x,i)=>{let v=vals[i];if(x[0]==="Kliky")push+=v;else if(x[0]==="Švihadlo")rope+=v;else abs+=v});
- let earned=Math.round(25+push*.7+abs*.35+rope*4);let date=today();
- if(data.workouts.some(w=>w.date===date)){alert("Dnešní trénink už máš zaznamenaný. Pro další jednotku použij jiný den.");return}
- data.xp+=earned;data.workouts.push({date,push,abs,rope,earned,kind});data.lastActive=date;
- let prev=new Date();prev.setDate(prev.getDate()-1);let prevKey=iso(prev);
- data.streak=data.lastActive===date?(data.workouts.length>1&&data.workouts[data.workouts.length-2].date===prevKey?data.streak+1:1):1;
- data.best=Math.max(data.best,data.streak);save();renderAll();alert(`Trénink splněn! +${earned} XP. Jen tak dál, Georgi!`);
+function startSession(key){if(state.draft&&!confirm("Rozpracovaný trénink bude nahrazen novým. Pokračovat?"))return;state.draft=buildSession(key,$("sessionDate").value||today());save();showView("train");renderDraft()}
+function startRecommended(){
+ let d=new Date().getDay(),key=d===3?"ropeA":d===4?"pushB":d===6?"mixed":d===1?"pushA":d===2?"ropeA":d===5?"mixed":"pushA";startSession(key)
 }
+function setProgress(itemIndex,setIndex,field,value){
+ if(!state.draft)return;let set=state.draft.items[itemIndex].sets[setIndex];set[field]=field==="done"?!!value:Math.max(0,Number(value)||0);save();renderDraft(false)
+}
+function renderDraft(scroll=false){
+ let host=$("activeSession");if(!state.draft){host.innerHTML="<p>Žádný trénink není otevřený. Vyber jednotku výše nebo si vytvoř vlastní.</p>";return}
+ let s=state.draft;
+ let html=`<div class="between"><div><div class="tag">ROZPRACOVÁNO · ${esc(s.date)}</div><h3>${esc(s.title)}</h3><p>${esc(s.desc||"Vlastní jednotka")}</p></div><button class="ghost smallbtn" onclick="resetDraft()">Zahodit</button></div>`;
+ s.items.forEach((it,i)=>{let ex=EX[it.id]||{desc:"Vlastní cvik",unit:it.unit||"opak."};let done=it.sets.filter(x=>x.done).length;
+ html+=`<div class="workoutCard"><div class="between"><div><b>${esc(it.name)}</b><div class="tiny">${done}/${it.sets.length} sérií · ${esc(it.unit)}</div></div><button class="ghost smallbtn" onclick="showExercise('${it.id}')">Jak na to</button></div>`;
+ it.sets.forEach((set,j)=>{html+=`<div class="setrow ${set.done?"done":""}"><div class="setnum">S${j+1}</div><div><div class="tiny">Cíl ${set.target} ${esc(it.unit)}</div><input aria-label="Skutečný výsledek série ${j+1}" type="number" min="0" max="999" step="any" value="${set.actual}" onchange="setProgress(${i},${j},'actual',this.value)"></div><div class="tiny" style="text-align:center">splněno</div><div class="check"><input type="checkbox" ${set.done?"checked":""} onchange="setProgress(${i},${j},'done',this.checked)"></div></div>`}).join("");
+ html+="</div>"});
+ let count=s.items.reduce((n,it)=>n+it.sets.filter(x=>x.done).length,0),all=s.items.reduce((n,it)=>n+it.sets.length,0);
+ html+=`<div class="between"><span class="pill">${count} / ${all} sérií hotovo</span><span class="tiny">XP se přidělí za skutečně splněné série</span></div><div class="row" style="margin-top:12px"><button onclick="finishSession()">Dokončit trénink</button><button class="secondary" onclick="saveDraft()">Uložit rozpracovaný</button></div>`;
+ host.innerHTML=html;
+ if(scroll)host.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function saveDraft(){save();alert("Rozpracovaný trénink je uložen. Můžeš se k němu vrátit později.")}
+function resetDraft(){if(state.draft&&!confirm("Opravdu zahodit rozpracovaný trénink?"))return;state.draft=null;save();renderDraft();renderAll()}
+function finishSession(){
+ let s=state.draft;if(!s)return;
+ let completed=s.items.flatMap(it=>it.sets.filter(x=>x.done).map(x=>({id:it.id,cat:it.cat,actual:x.actual,unit:it.unit,target:x.target})));
+ if(!completed.length){alert("Nejdřív odškrtni alespoň jednu skutečně dokončenou sérii.");return}
+ let push=0,abs=0,rope=0,plank=0;
+ completed.forEach(x=>{if(x.cat==="push")push+=x.actual;if(x.cat==="abs"){if(x.unit==="sek.")plank+=x.actual;else abs+=x.actual}if(x.cat==="rope")rope+=x.actual});
+ let earned=Math.round(20+completed.length*5+push*.65+abs*.35+plank*.12+rope*2.5);
+ let plannedSets=s.items.reduce((n,it)=>n+it.sets.length,0);let w={id:s.id,date:s.date,title:s.title,push,abs,rope,plank,earned,items:s.items.map(it=>({...it,sets:it.sets.filter(x=>x.done)})),completedSets:completed.length,plannedSets,completionRate:completed.length/plannedSets};
+ state.workouts.push(w);state.xp+=earned;state.lastActive=s.date;state.decayDate=null;state.draft=null;updateStreak();save();renderAll();showView("dashboard");alert(`Trénink uložen! +${earned} XP · ${completed.length} sérií. Dobrá práce!`)
+}
+function updateStreak(){
+ let dates=[...new Set(state.workouts.map(w=>w.date))].sort().reverse();if(!dates.length)return;
+ let streak=1;for(let i=1;i<dates.length;i++){let a=new Date(dates[i-1]+"T12:00:00"),b=new Date(dates[i]+"T12:00:00");if((a-b)/86400000===1)streak++;else break}
+ state.streak=streak;state.best=Math.max(state.best||0,streak)
+}
+function saveMax(){let n=Math.max(1,Math.min(100,Number($("maxPush").value)||15));state.maxPush=n;save();renderPlan();alert("Výchozí výkonnost uložena.")}
 function renderPlan(){
- let w=Math.min(8,Math.max(1,Math.floor(data.workouts.length/3)+1));$("weekNo").textContent=`TÝDEN ${w} / 8`;
- let p=plans[w-1];$("planDetails").innerHTML=`<div class="card"><div class="flex"><h2>${p.name}</h2><span class="pill">${p.focus}</span></div>${p.items.map(x=>`<div class="exercise"><div><b>${x[0]}</b><div class="tiny">${x[1]} série</div></div><b>${x[2]} ${x[3]}</b></div>`).join("")}<p class="tiny">Cílový objem jedné jednotky. Začni lehčí variantou, pokud je předepsaný počet nad tvou současnou čistou technikou.</p></div>`;
- let days=["Po","Út","St","Čt","Pá","So","Ne"];$("weekGrid").innerHTML=days.map((d,i)=>`<div class="day"><b>${d}</b>${[0,2,4].includes(i)?"⚡":"·"}<div class="tiny">${[0,2,4].includes(i)?"Trénink":"Volno"}</div></div>`).join("");
+ $("maxPush").value=state.maxPush||15;let week=currentCycleWeek(),successful=state.workouts.filter(w=>(w.completionRate||0)>=.75).length,block=Math.floor(successful/16)+1;$("phasePill").textContent=`BLOK ${block} · TÝDEN ${week}`;
+ let desc=["Základní objem","Navýšení objemu","Intenzita a náročnější variace","Odlehčení a regenerace"][week-1];
+ let days=[["Pondělí","Kliky A + břicho","pushA"],["Středa","Švihadlo + core","ropeA"],["Čtvrtek","Kliky B + břicho","pushB"],["Sobota","Kombinace + švihadlo","mixed"]];
+ $("weeklyPlan").innerHTML=`<div class="card"><div class="between"><h2>Tréninkový týden ${week}: ${desc}</h2><span class="pill">CYKLUS 4 TÝDNY</span></div>${days.map(d=>`<div class="workoutCard"><div class="between"><div><b>${d[0]}</b><div class="tiny">${d[1]}</div></div><button class="secondary smallbtn" onclick="startSession('${d[2]}')">Zahájit</button></div></div>`).join("")}<p class="tiny">Mezi tlakovými tréninky je prostor na zotavení. Volné dny jsou skutečné volno; nepřidávej další tvrdé kliky jen kvůli XP.</p></div>`;
+ $("maxAdvice").textContent=`Pracovní série se počítají z maxima ${state.maxPush} čistých kliků. Po 4 týdnech proveď kontrolní test, pokud se cítíš zregenerovaný.`
 }
+function addCustomExercise(){let id=$("customExercise").value;if(!id)return;customItems.push({id,sets:Math.max(1,Math.min(10,Number($("customSets").value)||3)),reps:Math.max(1,Number($("customReps").value)||10)});renderCustom()}
+function renderCustom(){$("customList").innerHTML=customItems.map((x,i)=>`<div class="row" style="justify-content:space-between;padding:5px 0"><span>${EX[x.id].name} · ${x.sets}×${x.reps}</span><button class="danger smallbtn" onclick="customItems.splice(${i},1);renderCustom()">Odebrat</button></div>`).join("")}
+function startCustom(){if(!customItems.length){alert("Přidej alespoň jeden cvik.");return}if(state.draft&&!confirm("Nahradit rozpracovaný trénink?"))return;state.draft={id:"custom-"+Date.now(),title:"Vlastní trénink",date:$("sessionDate").value||today(),desc:"Vlastní sestava",items:customItems.map(x=>({id:x.id,name:EX[x.id].name,cat:EX[x.id].cat,unit:EX[x.id].unit,sets:Array.from({length:x.sets},()=>({target:x.reps,actual:x.reps,done:false}))}))};customItems=[];renderCustom();save();renderDraft();alert("Vlastní trénink připraven. Odškrtávej série podle skutečnosti.")}
+function filterLibrary(cat){renderLibrary(cat)}
+function renderLibrary(cat="all"){
+ $("exerciseLibrary").innerHTML=Object.entries(EX).filter(([id,x])=>cat==="all"||x.cat===cat).map(([id,x])=>`<div class="exerciseCard"><details><summary>${x.cat==="push"?"💪":x.cat==="abs"?"🧱":"🪢"} ${x.name} <span class="tiny">· ${x.unit}</span></summary><p><b>Provedení:</b> ${x.desc}</p><p><b>Časté chyby:</b> ${x.mistakes}</p><p><b>Lehčí varianta:</b> ${x.easy}</p><p><b>Těžší varianta:</b> ${x.hard}</p><p class="pill">Trenérská pomůcka: ${x.cue}</p></details><button class="secondary smallbtn" onclick="addExerciseToDraft('${id}')">Přidat do tréninku</button></div>`).join("")
+}
+function showExercise(id){let x=EX[id];if(!x)return;alert(`${x.name}\n\nPROVEDENÍ\n${x.desc}\n\nČASTÉ CHYBY\n${x.mistakes}\n\nLEHČÍ VARIANTA\n${x.easy}\n\nTĚŽŠÍ VARIANTA\n${x.hard}`)}
+function addExerciseToDraft(id){if(!state.draft){state.draft={id:"free-"+Date.now(),title:"Vlastní trénink",date:$("sessionDate").value||today(),desc:"Cvik přidaný z knihovny",items:[]}}let x=EX[id];state.draft.items.push({id,name:x.name,cat:x.cat,unit:x.unit,sets:Array.from({length:3},()=>({target:x.cat==="push"?Math.max(4,Math.round(state.maxPush*.4)):x.cat==="rope"?2:12,actual:x.cat==="push"?Math.max(4,Math.round(state.maxPush*.4)):x.cat==="rope"?2:12,done:false}))});save();showView("train");renderDraft(true)}
 function renderCalendar(){
- let y=monthCursor.getFullYear(),m=monthCursor.getMonth();$("monthName").textContent=monthCursor.toLocaleDateString("cs-CZ",{month:"long",year:"numeric"});
- let first=new Date(y,m,1),offset=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate(),done=new Set(data.workouts.map(w=>w.date));
- let html=["Po","Út","St","Čt","Pá","So","Ne"].map(x=>`<div class="tiny" style="text-align:center">${x}</div>`).join("");
+ let y=monthCursor.getFullYear(),m=monthCursor.getMonth(),first=new Date(y,m,1),offset=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate();$("monthName").textContent=monthCursor.toLocaleDateString("cs-CZ",{month:"long",year:"numeric"});
+ let html=["Po","Út","St","Čt","Pá","So","Ne"].map(x=>`<div class="tiny" style="text-align:center">${x}</div>`).join(""),done=new Set(state.workouts.map(w=>w.date));
  for(let i=0;i<offset;i++)html+="<div></div>";
- for(let d=1;d<=days;d++){let k=iso(new Date(y,m,d));html+=`<div class="day ${done.has(k)?"done":""} ${k===today()?"today":""}"><b>${d}</b>${done.has(k)?"✅":""}</div>`}
- $("calendarGrid").innerHTML=html;
- $("history").innerHTML=data.workouts.slice().reverse().map(w=>`<div class="badgeitem"><span class="emblem">🏋️</span><div><b>${w.date}</b><div class="tiny">${w.push} kliků · ${w.abs} břišních · ${w.rope} min · +${w.earned} XP</div></div></div>`).join("")||"<p>Zatím bez záznamů.</p>";
+ for(let d=1;d<=days;d++){let key=iso(new Date(y,m,d));html+=`<div class="day ${done.has(key)?"done":""} ${key===today()?"today":""}"><b>${d}</b>${done.has(key)?"✓":""}</div>`}
+ $("calendarGrid").innerHTML=html;$("history").innerHTML=state.workouts.slice().reverse().map(w=>`<div class="badgeitem"><span class="emblem">🏋️</span><div><b>${esc(w.date)} · ${esc(w.title||"Trénink")}</b><div class="tiny">${w.push||0} kliků · ${w.abs||0} břišních · ${w.rope||0} min švihadla · +${w.earned||0} XP</div></div></div>`).join("")||"<p>Zatím žádné záznamy.</p>"
 }
+function changeMonth(n){monthCursor.setMonth(monthCursor.getMonth()+n);renderCalendar()}
+const medalDefs=[["🩸","První krev",s=>s.sessions>=1],["💪","100 kliků",s=>s.push>=100],["🧱","100 břišních opakování",s=>s.abs>=100],["🪢","30 minut švihadla",s=>s.rope>=30],["🔥","10 tréninků",s=>s.sessions>=10],["⚔️","25 tréninků",s=>s.sessions>=25],["🦾","500 kliků",s=>s.push>=500],["👑","1 000 kliků",s=>s.push>=1000],["🧘","1 000 břišních opakování",s=>s.abs>=1000],["⚡","180 minut švihadla",s=>s.rope>=180],["📆","Série 30 dní",s=>s.best>=30],["🏆","50 000 XP",s=>s.xp>=50000]];
 function renderAwards(){
  let idx=currentTitle();$("titleCount").textContent=`${idx+1} / 100`;
- $("titles").innerHTML=names.map((n,i)=>`<div class="badgeitem ${i>idx?"locked":""}"><span class="emblem">${icons[i]}</span><div style="flex:1"><b>${n}</b><div class="tiny">${thresholds[i].toLocaleString("cs-CZ")} XP ${i<=idx?"· ODEMČENO":"· Zamčeno"}</div></div>${i===idx?'<span class="pill">AKTUÁLNÍ</span>':i<idx?"✓":""}</div>`).join("");
- let t=totals(),s={...t,xp:data.xp,best:data.best};$("medals").innerHTML=medalDefs.map(m=>`<span class="medal ${m[3](s)?"":"locked"}">${m[0]} ${m[1]} ${m[3](s)?"✓":"🔒"}</span>`).join("");
+ $("titles").innerHTML=TITLES.map((n,i)=>`<div class="badgeitem ${i>idx?"locked":""}"><span class="emblem">${TITLE_ICONS[i]}</span><div style="flex:1"><b>${esc(n)}</b><div class="tiny">${thresholds[i].toLocaleString("cs-CZ")} XP · ${i<=idx?"ODEMČENO":"ZAMČENO"}</div></div>${i===idx?'<span class="pill">AKTUÁLNÍ</span>':i<idx?"✓":""}</div>`).join("");
+ let t=totals(),s={...t,xp:state.xp,best:state.best};$("medals").innerHTML=medalDefs.map(m=>`<span class="medal ${m[2](s)?"":"locked"}">${m[0]} ${m[1]} ${m[2](s)?"✓":"🔒"}</span>`).join("")
 }
 function renderStats(){
- let t=totals();$("sXP").textContent=Math.floor(data.xp).toLocaleString("cs-CZ");$("sWorkouts").textContent=t.workouts;$("sPush").textContent=t.push;$("sAbs").textContent=t.abs;$("sRope").textContent=t.rope+" min";$("sBest").textContent=data.best+" dní";
- $("breakdown").innerHTML=`<p>💪 Kliky: <b>${t.push}</b></p><div class="progress"><i style="width:${Math.min(100,t.push/(t.push+t.abs+t.rope*5||1)*100)}%"></i></div><p>🧱 Břišní opakování a výdrž: <b>${t.abs}</b></p><p>🪢 Švihadlo: <b>${t.rope} minut</b></p>`;
+ let t=totals();$("sXP").textContent=Math.floor(state.xp).toLocaleString("cs-CZ");$("sSessions").textContent=t.sessions;$("sPush").textContent=t.push;$("sAbs").textContent=t.abs;$("sRope").textContent=t.rope+" min";$("sBest").textContent=state.best+" dní";
+ let best={};state.workouts.forEach(w=>(w.items||[]).forEach(it=>(it.sets||[]).forEach(s=>{best[it.name]=Math.max(best[it.name]||0,s.actual||0)})));
+ $("records").innerHTML=Object.entries(best).sort((a,b)=>b[1]-a[1]).slice(0,10).map(x=>`<div class="between" style="padding:7px 0;border-bottom:1px solid #2b3949"><span>${esc(x[0])}</span><b>${x[1]}</b></div>`).join("")||"<p>Rekordy se zobrazí po prvním dokončeném tréninku.</p>"
 }
-function decay(){
- if(!data.lastActive)return;let last=new Date(data.lastActive+"T12:00:00"),now=new Date(today()+"T12:00:00"),days=Math.floor((now-last)/86400000);
- if(days>10){let since=data.decayDate?Math.floor((now-new Date(data.decayDate+"T12:00:00"))/86400000):1;if(since>0){let loss=Math.min(data.xp*.015*since,data.xp*.30);data.xp=Math.max(0,data.xp-loss);data.decayDate=today();save()}}
- else data.decayDate=null;
+function renderHome(){
+ let idx=currentTitle(),next=Math.min(99,idx+1),t=totals();$("xp").textContent=Math.floor(state.xp)+" XP";$("titleNow").textContent=TITLE_ICONS[idx]+" "+TITLES[idx];$("rankPill").textContent=TITLE_ICONS[idx]+" "+TITLES[idx].toUpperCase();
+ let pct=idx===99?100:(state.xp-thresholds[idx])/(thresholds[next]-thresholds[idx])*100;$("xpbar").style.width=Math.max(0,Math.min(100,pct))+"%";$("nextTitle").textContent=idx===99?"Nejvyšší hodnost dosažena":"Další: "+TITLES[next];$("xpNeed").textContent=idx===99?"MAX":`${Math.floor(state.xp)} / ${thresholds[next]} XP`;
+ $("streak").textContent=state.streak+" dní";$("pushTotal").textContent=t.push;$("ropeTotal").textContent=t.rope+" min";$("todayLabel").textContent=new Date().toLocaleDateString("cs-CZ",{weekday:"short",day:"numeric",month:"short"});
+ let d=new Date().getDay(),rec=d===3?"ropeA":d===4?"pushB":d===6?"mixed":d===1?"pushA":d===2?"ropeA":d===5?"mixed":"pushA";$("todayPlan").innerHTML=`<b>${templates[rec].title}</b><p>${templates[rec].desc}</p><span class="pill">4týdenní cyklus · týden ${currentCycleWeek()}</span>`;
+ $("recent").innerHTML=state.workouts.slice(-3).reverse().map(w=>`<div class="badgeitem"><span class="emblem">✅</span><div><b>${esc(w.date)} · ${esc(w.title||"Trénink")}</b><div class="tiny">+${w.earned||0} XP · ${w.completedSets||0} sérií</div></div></div>`).join("")||"<p>Zatím žádný záznam. První mise čeká.</p>"
 }
-function renderAll(){decay();renderHome();renderPlan();renderCalendar();renderAwards();renderStats()}
-document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));$(b.dataset.tab).classList.add("active")}));
-$("prevMonth").onclick=()=>{monthCursor.setMonth(monthCursor.getMonth()-1);renderCalendar()};$("nextMonth").onclick=()=>{monthCursor.setMonth(monthCursor.getMonth()+1);renderCalendar()};
-$("export").onclick=()=>{let blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="iron-george-zaloha.json";a.click();URL.revokeObjectURL(a.href)};
-$("importBtn").onclick=()=>$("importFile").click();
-$("importFile").onchange=async e=>{try{let x=JSON.parse(await e.target.files[0].text());if(!Array.isArray(x.workouts)||typeof x.xp!=="number")throw 0;data=x;save();renderAll();alert("Záloha obnovena.")}catch{alert("Soubor zálohy není platný.")}};
-if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
-renderAll();
-</script>
-</body></html>
+function applyDecay(){
+ if(!state.lastActive)return;let days=Math.floor((new Date(today()+"T12:00:00")-new Date(state.lastActive+"T12:00:00"))/86400000);
+ if(days<=14)return;let last=state.decayDate?new Date(state.decayDate+"T12:00:00"):new Date(state.lastActive+"T12:00:00");let elapsed=Math.floor((new Date(today()+"T12:00:00")-last)/86400000);
+ if(elapsed>=7){let weeks=Math.floor(elapsed/7),loss=Math.min(state.xp*.01*weeks,state.xp*.10);state.xp=Math.max(0,state.xp-loss);state.decayDate=today();save()}
+}
+function renderAll(){applyDecay();renderHome();renderPlan();renderCalendar();renderAwards();renderStats();renderLibrary();if(state.draft)renderDraft();$("sessionDate").value=$("sessionDate").value||today()}
+$("export").onclick=()=>{let blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="iron-george-zaloha.json";a.click();URL.revokeObjectURL(a.href)};
+$("importFile").onchange=async e=>{try{let x=JSON.parse(await e.target.files[0].text());if(!Array.isArray(x.workouts)||typeof x.xp!=="number")throw Error();state={...state,...x};save();renderAll();alert("Záloha obnovena.")}catch{alert("Soubor zálohy není platný.")}};
+function resetDraft(){if(!state.draft||confirm("Opravdu zrušit rozpracovaný trénink?")){state.draft=null;save();renderDraft();}}
+$("customExercise").innerHTML=Object.entries(EX).map(([id,x])=>`<option value="${id}">${x.name}</option>`).join("");
+renderAll();if("serviceWorker"in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script></body></html>
